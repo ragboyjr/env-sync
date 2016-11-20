@@ -8,4 +8,3 @@ function cmd {
 cmd "cat .env.example"
 cmd "cat .env"
 cmd "node env-sync.js"
-cmd "cat .env"

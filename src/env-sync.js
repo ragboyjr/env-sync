@@ -97,15 +97,8 @@ function createMissingVars(varsToCreateSet, createVarsHandler, envFile) {
     });
 }
 
-function writeEnv(envPath, envFile) {
-    fs.writeFile(envPath, envFile.toEnvFile(), (err) => {
-        if (err) {
-            console.log('Could not write env file...');
-            return;
-        }
-
-        console.log('Successfully wrote EnvFile!');
-    });
+function printEnv(envFile) {
+    process.stdout.write(envFile.toEnvFile());
 }
 
 function parseEnvs(envPath, envExamplePath) {
@@ -196,8 +189,10 @@ function main(config) {
             return
         }
 
+        console.log("---------------");
+
         envFile.compileVars();
-        writeEnv(config.envFilePath, envFile);
+        printEnv(envFile);
     }).then(null, (err) => {
         console.log(err);
     });
