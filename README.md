@@ -27,7 +27,7 @@ DB_PASSWORD=abc
 
 Now, running env-sync will make sure that the .env file has all of these variables and formatting as is. Any extra variables in the .env file will be removed, and any missing variables will be added. If any variable in the .env already has a value, then it's left as is. So env-sync only overwrites variables if they don't have a value to begin with.
 
-.env would now look like
+The command would then print out a .env like this:
 
 ```
 # DB Config
@@ -115,8 +115,7 @@ Configuring .env
   Removed Variables
     OLD_VAR=1
   SECRET_KEY: XqfZjoi4inhEKP3WUT5X0PZ5x2I7xbPvMRAfLkXvudM=
-Successfully wrote EnvFile!
-$ cat .env
+------------
 # DB Config
 DB_PORT=3306
 DB_HOST=mysql
